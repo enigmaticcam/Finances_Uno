@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "Finances_Uno",
+  "display": "standalone",
+  "name": "Finances_Uno",
+  "short_name": "Finances_Uno",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
