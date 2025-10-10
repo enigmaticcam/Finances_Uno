@@ -8,4 +8,9 @@ public sealed partial class AccountMainPage : Page
     {
         this.InitializeComponent();
     }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        Frame.GoBack();
+    }
 }

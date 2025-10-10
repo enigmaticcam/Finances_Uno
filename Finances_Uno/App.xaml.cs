@@ -1,3 +1,5 @@
+using Windows.ApplicationModel.Activation;
+
 namespace Finances_Uno;
 public partial class App : Application
 {
@@ -13,7 +15,19 @@ public partial class App : Application
     protected Window? MainWindow { get; private set; }
     protected IHost? Host { get; private set; }
 
-    protected override void OnLaunched(LaunchActivatedEventArgs args)
+    protected override void OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs args)
+    {
+        if (args.Kind == Windows.ApplicationModel.Activation.ActivationKind.Protocol)
+        {
+            ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
+            // TODO: Handle URI Activation
+            // The received URI is eventArgs.Uri.AbosoluateUri
+            var x = eventArgs.Uri.AbsoluteUri;
+
+        }
+    }
+
+    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
     {
         var builder = this.CreateBuilder(args)
             .Configure(host => host
@@ -34,7 +48,6 @@ public partial class App : Application
                     //services.AddSingleton<IMyService, MyService>();
                     services.AddSingleton<INavigator, Navigator>();
                 })
-                .UseNavigation(configure: x => x.
             );
         MainWindow = builder.Window;
 

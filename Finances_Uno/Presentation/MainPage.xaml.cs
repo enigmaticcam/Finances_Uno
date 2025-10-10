@@ -1,4 +1,4 @@
-using Finances_Uno.Presentation.Account;
+using Finances_Uno.Presentation.Login;
 
 namespace Finances_Uno;
 
@@ -11,6 +11,7 @@ public sealed partial class MainPage : Page
 
     private void GoToAccounts(object sender, RoutedEventArgs e)
     {
-        _ = this.Navigator()?.NavigateViewAsync<AccountMainPage>(this);
+        //Frame.Navigate(typeof(AccountMainPage));
+        Frame.Navigate(typeof(MainLogin));
     }
 }

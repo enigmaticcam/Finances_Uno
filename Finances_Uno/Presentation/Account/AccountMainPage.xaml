@@ -8,8 +8,12 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBlock Text="This is the account main page" />
-
-    </Grid>
+    <StackPanel>
+        
+        <TextBlock
+            Text="Accounts" Style="{StaticResource DisplayLarge}"
+            Margin="15"/>
+        <Button Content="Go Back"
+        Click="Button_Click" />
+    </StackPanel>
 </Page>

@@ -1,12 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity />
-  <Properties />
+  <Identity  Name="Finances" Version="1.0.0" Publisher="CN=ctangen"/>
+  <Properties >
+  
+  <Logo>Assets\Icons\eduardo-soares-utWyPB8_FU8-unsplash.scale-400 - Copy.jpg</Logo>
+  
+  <DisplayName>Finances</DisplayName>
+  
+  <PublisherDisplayName>Finances</PublisherDisplayName>
+  </Properties >
 
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
@@ -21,7 +28,18 @@
     <Application Id="App"
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
-      <uap:VisualElements />
+      <uap:VisualElements  DisplayName="Finances" Description="My Finances app" Square44x44Logo="Assets\Icons\Savings1-WF.png" Square150x150Logo="Assets\Icons\eduardo-soares-utWyPB8_FU8-unsplash.jpg">
+        <uap:DefaultTile>
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo"/>
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+      </uap:VisualElements >
+      <Extensions>
+        <uap:Extension Category="windows.protocol">
+          <uap:Protocol Name="ctangenfinances"/>
+        </uap:Extension>
+      </Extensions>
     </Application>
   </Applications>
 

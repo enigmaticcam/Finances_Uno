@@ -31,9 +31,22 @@
         ThemeService;
         SkiaRenderer;
     </UnoFeatures>
+    <PackageCertificateThumbprint>3893339C2658DD8C09662D7C46C665172DDE5C18</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>Finances_Uno_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Identity.Client" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" />
+    <PackageReference Include="Uno.WinUI.MSAL" />
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="Presentation\Account\AccountMainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Presentation\Login\MainLogin.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

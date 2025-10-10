@@ -4,9 +4,7 @@
       xmlns:local="using:Finances_Uno"
       xmlns:um="using:Uno.Material"
       Background="{ThemeResource BackgroundBrush}">
-    <StackPanel
-        HorizontalAlignment="Left"
-        VerticalAlignment="Center">
+    <StackPanel>
         <Button
             Content="Accounts"
             Click="GoToAccounts">
