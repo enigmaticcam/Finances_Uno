@@ -10,5 +10,10 @@
             Click="GoToAccounts">
             
         </Button>
+        <Button
+            Content="Cat API"
+            Click="GotoCatAPI">
+            
+        </Button>
     </StackPanel>
 </Page>
