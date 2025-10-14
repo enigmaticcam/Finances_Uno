@@ -1,5 +1,3 @@
-using Windows.ApplicationModel.Activation;
-
 namespace Finances_Uno;
 public partial class App : Application
 {
@@ -19,10 +17,10 @@ public partial class App : Application
     {
         if (args.Kind == Windows.ApplicationModel.Activation.ActivationKind.Protocol)
         {
-            ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
             // TODO: Handle URI Activation
+            // ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
             // The received URI is eventArgs.Uri.AbosoluateUri
-            var x = eventArgs.Uri.AbsoluteUri;
+            // var x = eventArgs.Uri.AbsoluteUri;
 
         }
     }
@@ -45,7 +43,6 @@ public partial class App : Application
                 .ConfigureServices((context, services) =>
                 {
                     // TODO: Register your services
-                    //services.AddSingleton<IMyService, MyService>();
                     services.AddSingleton<INavigator, Navigator>();
                 })
             );

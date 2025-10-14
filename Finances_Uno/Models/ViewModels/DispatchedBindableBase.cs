@@ -7,7 +7,6 @@ namespace Finances_Uno.Models.ViewModels;
 public abstract class DispatchedBindableBase : INotifyPropertyChanged
 {
     // Insert variables below here
-    //public DispatcherQueue Dispatcher => DispatcherQueue.GetForCurrentThread();
     public DispatcherQueue Dispatcher { get; set; }
 
     // Insert the event and property below here
