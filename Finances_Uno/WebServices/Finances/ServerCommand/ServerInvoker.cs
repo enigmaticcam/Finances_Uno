@@ -18,7 +18,7 @@ public class ServerInvoker : IServerInvoker
     public async Task<APIResult> Perform(IServerCommand<APIResult> command, BroadcastToken token)
     {
         await _server.StartTask(token);
-        APIResult result = null;
+        APIResult result = APIResult.Fail("");
         try
         {
             result = await command.Execute();
@@ -29,7 +29,7 @@ public class ServerInvoker : IServerInvoker
         }
         finally
         {
-            await _server.EndTask(token, result!);
+            await _server.EndTask(token, result);
         }
         return result;
     }
@@ -37,7 +37,7 @@ public class ServerInvoker : IServerInvoker
     public async Task<APIResult<T>> Perform<T>(IServerCommand<APIResult<T>> command, BroadcastToken token)
     {
         await _server.StartTask(token);
-        APIResult<T> result = null;
+        APIResult<T> result = APIResult<T>.Fail("");
         try
         {
             result = await command.Execute();
