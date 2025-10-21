@@ -1,3 +1,8 @@
+using Finances_Uno.Models.ViewModels;
+using Finances_Uno.Presentation;
+using Finances_Uno.Presentation.Account;
+using Finances_Uno.WebServices.Finances.ServerCommand.Account;
+
 namespace Finances_Uno;
 public partial class App : Application
 {
@@ -42,9 +47,10 @@ public partial class App : Application
                 .UseLocalization()
                 .ConfigureServices((context, services) =>
                 {
-                    // TODO: Register your services
                     services.AddSingleton<INavigator, Navigator>();
+                    services.AddSingleton<IAccountState, AccountState>();
                 })
+                .UseNavigation(RegisterRoutes)
             );
         MainWindow = builder.Window;
 
@@ -52,6 +58,8 @@ public partial class App : Application
         MainWindow.UseStudio();
 #endif
         MainWindow.SetWindowIcon();
+
+        //Host = await builder.NavigateAsync<MainPage>();
 
         Host = builder.Build();
 
@@ -75,5 +83,14 @@ public partial class App : Application
         }
         // Ensure the current window is active
         MainWindow.Activate();
+    }
+
+    private static void RegisterRoutes(IViewRegistry views, IRouteRegistry routes)
+    {
+        views.Register(
+            //new ViewMap(ViewModel: typeof(ShellModel)),
+            new ViewMap<MainPage, MainModel>(),
+            new ViewMap<AccountMainPage, AccountPageViewModel>()
+        );
     }
 }

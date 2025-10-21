@@ -1,5 +1,4 @@
 using Finances_Uno.Presentation;
-using Finances_Uno.Presentation.Login;
 
 namespace Finances_Uno;
 
@@ -13,7 +12,7 @@ public sealed partial class MainPage : Page
     private void GoToAccounts(object sender, RoutedEventArgs e)
     {
         //Frame.Navigate(typeof(AccountMainPage));
-        Frame.Navigate(typeof(MainLogin));
+        //Frame.Navigate(typeof(MainLogin));
     }
 
     private void GotoCatAPI(object sender, RoutedEventArgs e)
